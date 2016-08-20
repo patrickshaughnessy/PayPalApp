@@ -1,6 +1,7 @@
 # PayPal SPA
 
 This repo contains the NodeJS API and React SPA for the PayPal app.
+Deployed to Heroku at [https://paypal-delimiter-app.herokuapp.com/](https://paypal-delimiter-app.herokuapp.com/)
 
 ### File directory:
 
@@ -47,4 +48,4 @@ Precommit hook runs linting for code maintainability.
 
 ### Production
 
-To check the production build, run <code>npm run start:prod</code> and navigate to localhost:8080. The static React bundle is served up from the new <code>/build</code> folder. Webpack's Offline plugin starts a service worker to serve up the page even without a network connection.
+To check the production build, run <code>npm run start:prod</code> and navigate to localhost:8080. The static React bundle is served up from the new <code>/build</code> folder.
