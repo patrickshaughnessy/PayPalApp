@@ -6,11 +6,13 @@ const receiveLocalesFailure = (payload) => ({ type: Types.RECEIVE_LOCALES_FAILUR
 
 const changeProperty = (property) => ({ type: Types.CHANGE_PROPERTY, property })
 const toggleDedupView = () => ({ type: Types.TOGGLE_DEDUP_VIEW })
+const deleteProperty = (property) => ({ type: Types.DELETE_PROPERTY, property })
 
 export default {
   requestLocales,
   receiveLocales,
   receiveLocalesFailure,
   changeProperty,
-  toggleDedupView
+  toggleDedupView,
+  deleteProperty
 }

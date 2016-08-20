@@ -49,12 +49,21 @@ const toggleDedupView = (state, action) => {
     .set('dedup', !state.dedup)
 }
 
+const deleteProperty = (state, action) => {
+  return state
+    .update('properties', properties => properties.filter((property) => property !== action.property))
+    .updateIn(['localesByProperty'], localesByProperty => localesByProperty.without(action.property))
+    .updateIn(['localesByDelimiter'], localesByDelimiter => localesByDelimiter.without(action.property))
+    .set('viewing', state.properties[state.properties.length - 2] || null)
+}
+
 const ACTION_HANDLERS = {
   [Types.REQUEST_LOCALES]: requestLocales,
   [Types.RECEIVE_LOCALES]: receiveLocales,
   [Types.RECEIVE_LOCALES_FAILURE]: receiveLocalesFailure,
   [Types.CHANGE_PROPERTY]: changeProperty,
-  [Types.TOGGLE_DEDUP_VIEW]: toggleDedupView
+  [Types.TOGGLE_DEDUP_VIEW]: toggleDedupView,
+  [Types.DELETE_PROPERTY]: deleteProperty
 }
 
 export default createReducer(INITIAL_STATE, ACTION_HANDLERS)

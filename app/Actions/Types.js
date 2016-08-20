@@ -8,4 +8,5 @@ export default createTypes(`
 
   CHANGE_PROPERTY
   TOGGLE_DEDUP_VIEW
+  DELETE_PROPERTY
 `)
