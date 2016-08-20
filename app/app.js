@@ -8,7 +8,6 @@ import { applyRouterMiddleware, Router, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import useScroll from 'react-router-scroll'
 import configureStore from './Store'
-import Actions from './Actions/Creators'
 
 const initialState = {}
 const store = configureStore(initialState, browserHistory)
@@ -26,8 +25,6 @@ const routes = {
   component: App,
   childRoutes: createRoutes(store)
 }
-
-// store.dispatch(Actions.startup())
 
 const render = () => {
   ReactDOM.render(
