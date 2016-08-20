@@ -18,9 +18,12 @@ class Search extends Component {
   }
 
   _onSubmit = () => {
-    const { requestLocales } = this.props
-    requestLocales(this.state)
-    this.setState({ property: '' })
+    const { requestLocales, properties } = this.props
+    const { property } = this.state
+    if (properties.indexOf(property) === -1) {
+      requestLocales(this.state)
+      this.setState({ property: '' })
+    }
   }
 
   render () {
@@ -50,12 +53,14 @@ class Search extends Component {
 
 Search.propTypes = {
   viewing: React.PropTypes.string,
+  properties: React.PropTypes.array,
   requestLocales: React.PropTypes.func
 }
 
 const mapStateToProps = (state) => {
   return {
-    viewing: state.locales.viewing
+    viewing: state.locales.viewing,
+    properties: state.locales.properties
   }
 }
 

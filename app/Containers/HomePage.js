@@ -36,7 +36,7 @@ class HomePage extends Component {
 }
 
 HomePage.propTypes = {
-  locales: React.PropTypes.obj,
+  locales: React.PropTypes.object,
   loading: React.PropTypes.bool,
   requestLocales: React.PropTypes.func
 }

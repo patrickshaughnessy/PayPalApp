@@ -54,7 +54,7 @@ const deleteProperty = (state, action) => {
     .update('properties', properties => properties.filter((property) => property !== action.property))
     .updateIn(['localesByProperty'], localesByProperty => localesByProperty.without(action.property))
     .updateIn(['localesByDelimiter'], localesByDelimiter => localesByDelimiter.without(action.property))
-    .set('viewing', state.properties[state.properties.length - 2] || null)
+    .set('viewing', null)
 }
 
 const ACTION_HANDLERS = {

@@ -19,7 +19,7 @@ import styles from './Styles/LocalesDisplayStyle.css'
 
 const LocalesDisplay = (props) => {
   const { properties, localesByDelimiter, localesByProperty, viewing, dedup } = props
-  if (dedup && properties.length) {
+  if (dedup && properties.length && viewing) {
     return (
       <div className={styles.container}>
         <div className={styles.innerContainer}>
