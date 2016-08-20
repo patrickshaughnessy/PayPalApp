@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.innerContainer {
+  flex: 1;
+  align-self: flex-start;
+  text-align: center;
+}
+
+.info {
+  text-align: center;
+  flex: 1;
+}
+
+.select {
+  text-align: center;
+  align-self: center;
+}
