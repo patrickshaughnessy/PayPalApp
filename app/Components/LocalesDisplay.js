@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import {
   Table,
@@ -11,7 +11,6 @@ import {
 
 import {
   Card,
-  CardActions,
   CardHeader,
   CardText
 } from 'material-ui/Card'
@@ -19,8 +18,8 @@ import {
 import styles from './Styles/LocalesDisplayStyle.css'
 
 const LocalesDisplay = (props) => {
-  const { localesByDelimiter, localesByProperty, viewing, dedup } = props
-  if (dedup) {
+  const { properties, localesByDelimiter, localesByProperty, viewing, dedup } = props
+  if (dedup && properties.length) {
     return (
       <div className={styles.container}>
         <div className={styles.innerContainer}>

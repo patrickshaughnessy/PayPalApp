@@ -2,18 +2,11 @@
 
 const debug = require('debug')('PayPalApp: server')
 const express = require('express')
-const mongoose = require('mongoose')
 const config = require('./config')
 const setup = require('./middlewares/frontendMiddleware')
 const resolve = require('path').resolve
 
 debug('booting up')
-
-const { uri, options } = config.environment.mongo
-mongoose.connect(uri, options, (err) => {
-  if (err) throw err
-  debug(`connected to MONGODB at ${uri}`)
-})
 
 const app = express()
 config.express(app)

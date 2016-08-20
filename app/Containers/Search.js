@@ -49,7 +49,8 @@ class Search extends Component {
 }
 
 Search.propTypes = {
-  submit: React.PropTypes.func
+  viewing: React.PropTypes.string,
+  requestLocales: React.PropTypes.func
 }
 
 const mapStateToProps = (state) => {

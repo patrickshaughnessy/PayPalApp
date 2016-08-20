@@ -12,18 +12,12 @@ if (!process.env.NODE_ENV || envs.indexOf(process.env.NODE_ENV) === -1) {
 debug('Configuring for NODE_ENV=%s', process.env.NODE_ENV)
 
 const base = {
-  mongo: {
-    uri: process.env.MONGODB_URI,
-    options: {}
-  },
-
   server: {
     port: process.env.PORT || 8080,
     ip: process.env.IP
   },
 
   env: process.env.NODE_ENV
-
 }
 
 let extendedOptions

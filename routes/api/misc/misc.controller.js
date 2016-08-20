@@ -1,7 +1,6 @@
 'use strict'
 
 require('rootpath')()
-const debug = require('debug')('PayPalApp: routes/api/misc')
 const fs = require('fs')
 const path = require('path')
 const async = require('async')
@@ -57,8 +56,6 @@ const findDelimiters = (delimiter, cb) => {
     )
   })
 }
-
-
 
 exports.delimeters = (req, res) => {
   findDelimiters(req.query.property, (err, results) => {

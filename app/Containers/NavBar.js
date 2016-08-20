@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 
-import styles from './Styles/NavBarStyle.css'
-
 import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
 import AppBar from 'material-ui/AppBar'
@@ -52,12 +50,11 @@ class NavBar extends Component {
 }
 
 NavBar.propTypes = {
-
+  changeRoute: React.PropTypes.func
 }
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    ownProps: ownProps
   }
 }
 

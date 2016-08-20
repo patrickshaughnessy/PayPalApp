@@ -12,13 +12,12 @@ import configureStore from './Store'
 const initialState = {}
 const store = configureStore(initialState, browserHistory)
 
-if (window.devToolsExtension) {
+if (process.env.NODE_ENV !== 'production' && window.devToolsExtension) {
   window.devToolsExtension.updateStore(store)
 }
 
 const history = syncHistoryWithStore(browserHistory, store)
 
-// Set up the router, wrapping all Routes in the App component
 import App from 'Containers/App'
 import createRoutes from './Navigation'
 const routes = {

@@ -2,7 +2,6 @@ import { take, put, call } from 'redux-saga/effects'
 import Types from '../Actions/Types'
 import Actions from '../Actions/Creators'
 
-// attempts to login
 export default (api) => {
   function * worker (property) {
     const response = yield call(api.getLocales, property)

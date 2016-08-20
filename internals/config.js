@@ -33,8 +33,6 @@ const ReactBoilerplate = {
         'cors',
         'debug',
         'jade',
-        'mongoose',
-        'mongoose-deep-populate',
         'morgan',
         'request',
         'rootpath'

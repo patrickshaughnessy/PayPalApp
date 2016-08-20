@@ -4,7 +4,6 @@ import createSagaMiddleware from 'redux-saga'
 import { stateTransformer } from 'redux-seamless-immutable'
 import createLogger from 'redux-logger'
 
-// import createReducer from './reducers'
 import rootReducer from '../Reducers'
 import sagas from '../Sagas'
 
@@ -20,14 +19,18 @@ export default function configureStore (initialState = {}, history) {
     routerMiddleware(history)
   ]
 
+  let enhancers
   if (process.env.NODE_ENV === 'development') {
     middlewares.push(loggerMiddleware)
+    enhancers = compose(
+      applyMiddleware(...middlewares),
+      devtools()
+    )
+  } else {
+    enhancers = compose(
+      applyMiddleware(...middlewares)
+    )
   }
-
-  const enhancers = compose(
-    applyMiddleware(...middlewares),
-    devtools()
-  )
 
   const store = createStore(
     rootReducer(),

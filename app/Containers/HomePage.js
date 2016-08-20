@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { push } from 'react-router-redux'
 import Helmet from 'react-helmet'
+
+import CircularProgress from 'material-ui/CircularProgress'
 
 import Actions from '../Actions/Creators'
 
 import Search from './Search'
-import LocalesDisplay from './LocalesDisplay'
 import PropertiesDisplay from './PropertiesDisplay'
 
-import styles from './Styles/HomePageStyle.css'
+import LocalesDisplay from '../Components/LocalesDisplay'
 
-import CircularProgress from 'material-ui/CircularProgress'
+import styles from './Styles/HomePageStyle.css'
 
 class HomePage extends Component {
 
@@ -36,7 +36,9 @@ class HomePage extends Component {
 }
 
 HomePage.propTypes = {
-
+  locales: React.PropTypes.obj,
+  loading: React.PropTypes.bool,
+  requestLocales: React.PropTypes.func
 }
 
 const mapStateToProps = (state) => {

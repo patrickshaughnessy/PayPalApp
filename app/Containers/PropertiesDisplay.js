@@ -36,11 +36,7 @@ class PropertiesDisplay extends Component {
   render () {
     const { properties, toggleDedupView, viewing, deleteProperty } = this.props
     if (!properties.length) {
-      return (
-        <div className={styles.container}>
-          <h3 className={styles.info}>Locale info will display here</h3>
-        </div>
-      )
+      return null
     } else {
       return (
         <div className={styles.container}>
@@ -74,7 +70,11 @@ class PropertiesDisplay extends Component {
 }
 
 PropertiesDisplay.propTypes = {
-
+  viewing: React.PropTypes.string,
+  properties: React.PropTypes.array,
+  changeProperty: React.PropTypes.func,
+  toggleDedupView: React.PropTypes.func,
+  deleteProperty: React.PropTypes.func
 }
 
 const mapStateToProps = (state) => {
