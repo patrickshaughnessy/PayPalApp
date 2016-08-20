@@ -55,6 +55,7 @@ const deleteProperty = (state, action) => {
     .updateIn(['localesByProperty'], localesByProperty => localesByProperty.without(action.property))
     .updateIn(['localesByDelimiter'], localesByDelimiter => localesByDelimiter.without(action.property))
     .set('viewing', null)
+    .set('dedup', false)
 }
 
 const ACTION_HANDLERS = {

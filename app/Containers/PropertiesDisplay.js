@@ -34,7 +34,7 @@ class PropertiesDisplay extends Component {
   }
 
   render () {
-    const { properties, toggleDedupView, viewing, deleteProperty } = this.props
+    const { properties, toggleDedupView, viewing, deleteProperty, dedup } = this.props
     if (!properties.length) {
       return null
     } else {
@@ -49,6 +49,7 @@ class PropertiesDisplay extends Component {
             <div className={styles.options}>
               <div className={styles.toggle}>
                 <Toggle
+                  toggled={dedup}
                   label='Dedup'
                   labelPosition='right'
                   onToggle={() => toggleDedupView()}
@@ -72,6 +73,7 @@ class PropertiesDisplay extends Component {
 PropertiesDisplay.propTypes = {
   viewing: React.PropTypes.string,
   properties: React.PropTypes.array,
+  dedup: React.PropTypes.bool,
   changeProperty: React.PropTypes.func,
   toggleDedupView: React.PropTypes.func,
   deleteProperty: React.PropTypes.func
@@ -80,7 +82,8 @@ PropertiesDisplay.propTypes = {
 const mapStateToProps = (state) => {
   return {
     viewing: state.locales.viewing,
-    properties: state.locales.properties
+    properties: state.locales.properties,
+    dedup: state.locales.dedup
   }
 }
 
